@@ -1,0 +1,18 @@
+[package]
+name = "pe-exit-lab"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+bytes.workspace = true
+connectivity-api.workspace = true
+connectivity-iroh.workspace = true
+iroh.workspace = true
+minicbor.workspace = true
+pe-wire.workspace = true
+rand.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
