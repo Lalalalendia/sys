@@ -1,0 +1,34 @@
+[workspace]
+members = [
+  "crates/pe-wire",
+  "crates/connectivity-api",
+  "crates/session-core",
+  "crates/connectivity-iroh",
+  "bins/pe-client-lab",
+  "bins/pe-exit-lab",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.91"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+async-trait = "0.1"
+bytes = "1"
+futures-util = "0.3"
+minicbor = { version = "2", features = ["std", "derive"] }
+rand = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net", "signal", "io-util"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+zeroize = { version = "1", features = ["derive"] }
+iroh = { git = "https://github.com/n0-computer/iroh", rev = "d4490fcfde8e4dc7260a44a2a982c654748595e2", default-features = false, features = ["tls-ring"] }
+
+pe-wire = { path = "crates/pe-wire" }
+connectivity-api = { path = "crates/connectivity-api" }
+session-core = { path = "crates/session-core" }
+connectivity-iroh = { path = "crates/connectivity-iroh" }
